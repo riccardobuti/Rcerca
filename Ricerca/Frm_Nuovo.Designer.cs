@@ -54,11 +54,15 @@
             this.btnAnnulla = new System.Windows.Forms.Button();
             this.btnInserisci = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtLuogo = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtLuogo);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.button1);
@@ -84,13 +88,13 @@
             this.panel2.Location = new System.Drawing.Point(9, 41);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(693, 357);
+            this.panel2.Size = new System.Drawing.Size(693, 370);
             this.panel2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(180, 212);
+            this.label1.Location = new System.Drawing.Point(180, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 21;
@@ -100,7 +104,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(88, 206);
+            this.dateTimePicker1.Location = new System.Drawing.Point(88, 234);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(86, 20);
@@ -138,7 +142,7 @@
             // 
             // txtDataInserimento
             // 
-            this.txtDataInserimento.Location = new System.Drawing.Point(374, 209);
+            this.txtDataInserimento.Location = new System.Drawing.Point(374, 237);
             this.txtDataInserimento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataInserimento.Name = "txtDataInserimento";
             this.txtDataInserimento.ReadOnly = true;
@@ -148,7 +152,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(284, 212);
+            this.label10.Location = new System.Drawing.Point(284, 240);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 13);
@@ -157,11 +161,11 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(88, 235);
+            this.txtNote.Location = new System.Drawing.Point(88, 263);
             this.txtNote.Margin = new System.Windows.Forms.Padding(2);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(374, 83);
+            this.txtNote.Size = new System.Drawing.Size(374, 87);
             this.txtNote.TabIndex = 8;
             // 
             // txtDurata
@@ -216,7 +220,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 238);
+            this.label9.Location = new System.Drawing.Point(49, 266);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
@@ -226,7 +230,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 212);
+            this.label8.Location = new System.Drawing.Point(46, 240);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(30, 13);
@@ -295,7 +299,7 @@
             // 
             // btnAnnulla
             // 
-            this.btnAnnulla.Location = new System.Drawing.Point(9, 402);
+            this.btnAnnulla.Location = new System.Drawing.Point(9, 415);
             this.btnAnnulla.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnulla.Name = "btnAnnulla";
             this.btnAnnulla.Size = new System.Drawing.Size(95, 22);
@@ -306,7 +310,7 @@
             // 
             // btnInserisci
             // 
-            this.btnInserisci.Location = new System.Drawing.Point(607, 402);
+            this.btnInserisci.Location = new System.Drawing.Point(607, 415);
             this.btnInserisci.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserisci.Name = "btnInserisci";
             this.btnInserisci.Size = new System.Drawing.Size(95, 22);
@@ -327,11 +331,29 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "INSERIMENTO";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(243, 179);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Luogo";
+            // 
+            // txtLuogo
+            // 
+            this.txtLuogo.Location = new System.Drawing.Point(284, 176);
+            this.txtLuogo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLuogo.Name = "txtLuogo";
+            this.txtLuogo.Size = new System.Drawing.Size(176, 20);
+            this.txtLuogo.TabIndex = 23;
+            // 
             // Frm_Nuovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 434);
+            this.ClientSize = new System.Drawing.Size(715, 448);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnInserisci);
             this.Controls.Add(this.btnAnnulla);
@@ -375,5 +397,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtLuogo;
+        private System.Windows.Forms.Label label13;
     }
 }

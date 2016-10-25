@@ -47,6 +47,8 @@
             this.txtAnno = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtLuogo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtMese = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -148,7 +150,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 207);
+            this.label8.Location = new System.Drawing.Point(46, 234);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
@@ -158,7 +160,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 236);
+            this.label9.Location = new System.Drawing.Point(49, 263);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
@@ -205,6 +207,7 @@
             this.cbGenere.Name = "cbGenere";
             this.cbGenere.Size = new System.Drawing.Size(374, 21);
             this.cbGenere.TabIndex = 4;
+            this.cbGenere.DropDown += new System.EventHandler(this.cbGenere_DropDown);
             // 
             // txtDurata
             // 
@@ -216,7 +219,7 @@
             // 
             // txtAnno
             // 
-            this.txtAnno.Location = new System.Drawing.Point(88, 208);
+            this.txtAnno.Location = new System.Drawing.Point(88, 235);
             this.txtAnno.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnno.Name = "txtAnno";
             this.txtAnno.Size = new System.Drawing.Size(86, 20);
@@ -224,15 +227,17 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(88, 235);
+            this.txtNote.Location = new System.Drawing.Point(88, 263);
             this.txtNote.Margin = new System.Windows.Forms.Padding(2);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(415, 83);
+            this.txtNote.Size = new System.Drawing.Size(415, 65);
             this.txtNote.TabIndex = 7;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtLuogo);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.txtMese);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.button4);
@@ -260,9 +265,27 @@
             this.panel2.Size = new System.Drawing.Size(735, 337);
             this.panel2.TabIndex = 1;
             // 
+            // txtLuogo
+            // 
+            this.txtLuogo.Location = new System.Drawing.Point(286, 176);
+            this.txtLuogo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLuogo.Name = "txtLuogo";
+            this.txtLuogo.Size = new System.Drawing.Size(176, 20);
+            this.txtLuogo.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(245, 179);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Luogo";
+            // 
             // txtMese
             // 
-            this.txtMese.Location = new System.Drawing.Point(226, 208);
+            this.txtMese.Location = new System.Drawing.Point(226, 235);
             this.txtMese.Margin = new System.Windows.Forms.Padding(2);
             this.txtMese.Name = "txtMese";
             this.txtMese.Size = new System.Drawing.Size(86, 20);
@@ -271,7 +294,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(184, 207);
+            this.label10.Location = new System.Drawing.Point(184, 234);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(33, 13);
@@ -429,6 +452,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn Modifica;
         private System.Windows.Forms.DataGridViewButtonColumn Elimina;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txtLuogo;
+        private System.Windows.Forms.Label label13;
     }
 }
 

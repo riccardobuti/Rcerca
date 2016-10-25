@@ -65,7 +65,7 @@ namespace Ricerca
                     SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
 
             con.Open();
-            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Catalogo (Soggetto, Titolo, Tag, Autore, Genere, Durata, Anno, Mese, Note, File  ) VALUES (@Soggetto, @Titolo, @Tag, @Autore, @GenereId, @Durata, @Anno, @Mese,  @Note, @File)", con);
+            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Catalogo (Soggetto, Titolo, Tag, Autore, Genere, Durata, Anno, Mese, Note, Luogo, File  ) VALUES (@Soggetto, @Titolo, @Tag, @Autore, @GenereId, @Durata, @Anno, @Mese,  @Note, @Luogo, @File)", con);
             cmd.Parameters.AddWithValue("@Soggetto", txtSoggetto.Text);
             cmd.Parameters.AddWithValue("@Titolo", txtTitolo.Text);
             cmd.Parameters.AddWithValue("@Tag", txtTag.Text);
@@ -76,6 +76,8 @@ namespace Ricerca
             cmd.Parameters.AddWithValue("@Mese", mese);
             cmd.Parameters.AddWithValue("@Note", txtNote.Text);
             cmd.Parameters.AddWithValue("@File", dst);
+            cmd.Parameters.AddWithValue("@Luogo", txtLuogo.Text);
+            
 
 
             try

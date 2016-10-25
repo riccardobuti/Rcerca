@@ -54,6 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.txtLuogo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +95,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtLuogo);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.txtPathFile);
@@ -123,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(180, 212);
+            this.label1.Location = new System.Drawing.Point(180, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 21;
@@ -134,7 +138,7 @@
             this.dateTimePicker1.CustomFormat = "MM/yyyy";
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(88, 206);
+            this.dateTimePicker1.Location = new System.Drawing.Point(88, 236);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(86, 20);
@@ -161,7 +165,7 @@
             // 
             // txtDataInserimento
             // 
-            this.txtDataInserimento.Location = new System.Drawing.Point(374, 209);
+            this.txtDataInserimento.Location = new System.Drawing.Point(374, 239);
             this.txtDataInserimento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataInserimento.Name = "txtDataInserimento";
             this.txtDataInserimento.ReadOnly = true;
@@ -171,7 +175,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(284, 212);
+            this.label10.Location = new System.Drawing.Point(284, 242);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 13);
@@ -180,7 +184,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(88, 235);
+            this.txtNote.Location = new System.Drawing.Point(88, 265);
             this.txtNote.Margin = new System.Windows.Forms.Padding(2);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
@@ -239,7 +243,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 238);
+            this.label9.Location = new System.Drawing.Point(49, 268);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
@@ -249,7 +253,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 212);
+            this.label8.Location = new System.Drawing.Point(46, 242);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(30, 13);
@@ -328,6 +332,24 @@
             this.lblId.TabIndex = 28;
             this.lblId.Text = "ID";
             // 
+            // txtLuogo
+            // 
+            this.txtLuogo.Location = new System.Drawing.Point(284, 179);
+            this.txtLuogo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLuogo.Name = "txtLuogo";
+            this.txtLuogo.Size = new System.Drawing.Size(176, 20);
+            this.txtLuogo.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(243, 182);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Luogo";
+            // 
             // Frm_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,5 +398,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtLuogo;
+        private System.Windows.Forms.Label label13;
     }
 }

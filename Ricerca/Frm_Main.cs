@@ -50,15 +50,22 @@ namespace Ricerca
         {
             SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
             con.Open();
-            string cmd = "SELECT * FROM Catalogo Where Titolo like '%" + txtTitolo.Text + "%' and Soggetto like'%" + txtSoggetto.Text + "%' and Tag like'%" + txtTag.Text + "%' and Anno like'%" + txtAnno.Text + "%'";
+            string cmd = "SELECT * FROM Catalogo Where Titolo like '%" + txtTitolo.Text + "%' and Soggetto like'%" + txtSoggetto.Text + "%' and Tag like'%" + txtTag.Text + "%' and Anno like'%" + txtAnno.Text + "%'" +
+                         "and Mese like'%" + txtMese.Text + "%' and Luogo like'%" + txtLuogo.Text + "%' and Genere like'%" + cbGenere.Text + "%' and Note like'%" + txtNote.Text + "%'";
 
             SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd, con);
 
             using (DataTable dt = new DataTable())
             {
+               
                 sda.Fill(dt);
                 dgvRicerca.DataSource = dt;
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("LA RICERCA NON HA PRODOTTO RISULTATI");
+                }
             }
+            
 
 
             con.Close();
@@ -185,6 +192,7 @@ namespace Ricerca
             txtTag.Text = "";
             txtTitolo.Text = "";
             cbGenere.Text = "";
+            txtLuogo.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -195,11 +203,11 @@ namespace Ricerca
 
         void CaricaGeneri()
         {
-
+            try { 
 
             SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
             con.Open();
-            string query = "SELECT * FROM genere";
+            string query = "SELECT * FROM genere ORDER BY Genere ASC";
             SQLiteCommand cmd = new SQLiteCommand(query, con);
             SQLiteDataReader dr = cmd.ExecuteReader();
 
@@ -211,8 +219,20 @@ namespace Ricerca
 
                 }
             }
+                con.Close();
 
-            con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void cbGenere_DropDown(object sender, EventArgs e)
+        {
+            this.cbGenere.Items.Clear();
+            CaricaGeneri();
         }
     }
 }

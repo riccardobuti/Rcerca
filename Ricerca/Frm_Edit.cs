@@ -73,7 +73,7 @@ namespace Ricerca
             SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
             con.Open();
 
-            SQLiteCommand cmd = new SQLiteCommand("Update Catalogo SET Soggetto=@Soggetto, Titolo=@Titolo, Tag=@Tag, Autore=@Autore, Genere=@Genere, Durata=@Durata, Note=@Note Where Id=@Id", con);
+            SQLiteCommand cmd = new SQLiteCommand("Update Catalogo SET Soggetto=@Soggetto, Titolo=@Titolo, Tag=@Tag, Autore=@Autore, Genere=@Genere, Durata=@Durata, Note=@Note, Luogo=@Luogo Where Id=@Id", con);
             cmd.Parameters.AddWithValue("@Id", Preferenze.IdElemento);
             cmd.Parameters.AddWithValue("@Soggetto", txtSoggetto.Text);
             cmd.Parameters.AddWithValue("@Titolo", txtTitolo.Text);
@@ -82,6 +82,7 @@ namespace Ricerca
             cmd.Parameters.AddWithValue("@Genere", cbGenere.Text);
             cmd.Parameters.AddWithValue("@Durata", txtDurata.Text);
             cmd.Parameters.AddWithValue("@Note", txtNote.Text);
+            cmd.Parameters.AddWithValue("@Luogo", txtLuogo.Text);
             cmd.ExecuteNonQuery();
             
         }
