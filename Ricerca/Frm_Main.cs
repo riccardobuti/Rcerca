@@ -35,6 +35,8 @@ namespace Ricerca
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             Preferenze.LoadPath();
+            CaricaGeneri();
+
 
         }
 
@@ -183,6 +185,34 @@ namespace Ricerca
             txtTag.Text = "";
             txtTitolo.Text = "";
             cbGenere.Text = "";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Frm_Genere fg = new Frm_Genere();
+            fg.Show();
+        }
+
+        void CaricaGeneri()
+        {
+
+
+            SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
+            con.Open();
+            string query = "SELECT * FROM genere";
+            SQLiteCommand cmd = new SQLiteCommand(query, con);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    cbGenere.Items.Add(dr["Genere"].ToString());
+
+                }
+            }
+
+            con.Close();
         }
     }
 }

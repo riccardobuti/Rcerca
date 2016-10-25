@@ -11,6 +11,7 @@ namespace Ricerca
     {
         public static string pathDb { get; set; }
         public static string pathSalvataggio { get; set; }
+        public static int IdElemento { get; set; }
 
 
         public static void LoadPath()

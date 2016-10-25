@@ -52,11 +52,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dgvRicerca = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Apri = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Modifica = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Elimina = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRicerca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -325,6 +326,24 @@
             this.dgvRicerca.TabIndex = 2;
             this.dgvRicerca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRicerca_CellContentClick);
             // 
+            // Apri
+            // 
+            this.Apri.HeaderText = "Apri";
+            this.Apri.Name = "Apri";
+            this.Apri.ReadOnly = true;
+            // 
+            // Modifica
+            // 
+            this.Modifica.HeaderText = "Modifica";
+            this.Modifica.Name = "Modifica";
+            this.Modifica.ReadOnly = true;
+            // 
+            // Elimina
+            // 
+            this.Elimina.HeaderText = "Elimina";
+            this.Elimina.Name = "Elimina";
+            this.Elimina.ReadOnly = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(748, 130);
@@ -347,29 +366,22 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // Apri
+            // button5
             // 
-            this.Apri.HeaderText = "Apri";
-            this.Apri.Name = "Apri";
-            this.Apri.ReadOnly = true;
-            // 
-            // Modifica
-            // 
-            this.Modifica.HeaderText = "Modifica";
-            this.Modifica.Name = "Modifica";
-            this.Modifica.ReadOnly = true;
-            // 
-            // Elimina
-            // 
-            this.Elimina.HeaderText = "Elimina";
-            this.Elimina.Name = "Elimina";
-            this.Elimina.ReadOnly = true;
+            this.button5.Location = new System.Drawing.Point(748, 223);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(170, 41);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Gestisci Genere";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 715);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
@@ -416,6 +428,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn Apri;
         private System.Windows.Forms.DataGridViewButtonColumn Modifica;
         private System.Windows.Forms.DataGridViewButtonColumn Elimina;
+        private System.Windows.Forms.Button button5;
     }
 }
 

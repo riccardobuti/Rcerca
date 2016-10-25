@@ -65,7 +65,7 @@ namespace Ricerca
                     SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
 
             con.Open();
-            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Catalogo (Soggetto, Titolo, Tag, Autore, GenereId, Durata, Anno, Mese, Note, File  ) VALUES (@Soggetto, @Titolo, @Tag, @Autore, @GenereId, @Durata, @Anno, @Mese,  @Note, @File)", con);
+            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Catalogo (Soggetto, Titolo, Tag, Autore, Genere, Durata, Anno, Mese, Note, File  ) VALUES (@Soggetto, @Titolo, @Tag, @Autore, @GenereId, @Durata, @Anno, @Mese,  @Note, @File)", con);
             cmd.Parameters.AddWithValue("@Soggetto", txtSoggetto.Text);
             cmd.Parameters.AddWithValue("@Titolo", txtTitolo.Text);
             cmd.Parameters.AddWithValue("@Tag", txtTag.Text);
@@ -112,11 +112,35 @@ namespace Ricerca
         private void Frm_Nuovo_Load(object sender, EventArgs e)
         {
             txtDataInserimento.Text = DateTime.Now.ToShortDateString();
+            CaricaGeneri();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show(dateTimePicker1.Text);
+        }
+
+
+            void CaricaGeneri()
+        {
+            
+
+            SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
+            con.Open();
+            string query = "SELECT * FROM genere";
+            SQLiteCommand cmd =new SQLiteCommand(query, con);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    cbGenere.Items.Add(dr["Genere"].ToString());
+                
+                }
+            }
+
+            con.Close();
         }
     }
 }

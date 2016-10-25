@@ -25,6 +25,7 @@ namespace Ricerca
 
         private void Frm_Edit_Load(object sender, EventArgs e)
         {
+            CaricaGeneri();
             lblId.Text = Preferenze.IdElemento.ToString();
             RicercaDB();
         }
@@ -48,7 +49,7 @@ namespace Ricerca
                 txtTitolo.Text = dr["Titolo"].ToString();
                 txtTag.Text = dr["Tag"].ToString();
                 txtAutore.Text=dr["Autore"].ToString();
-                cbGenere.SelectedValue = dr["GenereId"].ToString();
+                cbGenere.Text = dr["Genere"].ToString();
                 txtDurata.Text = dr["Durata"].ToString();
                 dateTimePicker1.Value = Convert.ToDateTime(dr["Mese"].ToString() + "/" + dr["Anno"].ToString());
                 txtNote.Text = dr["Note"].ToString();
@@ -72,17 +73,38 @@ namespace Ricerca
             SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
             con.Open();
 
-            SQLiteCommand cmd = new SQLiteCommand("Update Catalogo SET Soggetto=@Soggetto, Titolo=@Titolo, Tag=@Tag, Autore=@Autore, GenereId=@GenereId, Durata=@Durata, Note=@Note Where Id=@Id", con);
+            SQLiteCommand cmd = new SQLiteCommand("Update Catalogo SET Soggetto=@Soggetto, Titolo=@Titolo, Tag=@Tag, Autore=@Autore, Genere=@Genere, Durata=@Durata, Note=@Note Where Id=@Id", con);
             cmd.Parameters.AddWithValue("@Id", Preferenze.IdElemento);
             cmd.Parameters.AddWithValue("@Soggetto", txtSoggetto.Text);
             cmd.Parameters.AddWithValue("@Titolo", txtTitolo.Text);
             cmd.Parameters.AddWithValue("@Tag", txtTag.Text);
             cmd.Parameters.AddWithValue("@Autore", txtAutore.Text);
-            cmd.Parameters.AddWithValue("@GenereId", cbGenere.Text);
+            cmd.Parameters.AddWithValue("@Genere", cbGenere.Text);
             cmd.Parameters.AddWithValue("@Durata", txtDurata.Text);
             cmd.Parameters.AddWithValue("@Note", txtNote.Text);
             cmd.ExecuteNonQuery();
             
+        }
+        void CaricaGeneri()
+        {
+
+
+            SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
+            con.Open();
+            string query = "SELECT * FROM genere";
+            SQLiteCommand cmd = new SQLiteCommand(query, con);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    cbGenere.Items.Add(dr["Genere"].ToString());
+
+                }
+            }
+
+            con.Close();
         }
     }
 }
