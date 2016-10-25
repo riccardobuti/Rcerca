@@ -40,9 +40,15 @@ namespace Ricerca
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            RicercaDB();
+        }
+
+        void RicercaDB()
+        {
             SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
             con.Open();
-            string cmd = "SELECT * FROM Catalogo Where Titolo like '%" + txtTitolo.Text + "%' and Soggetto like'%" + txtSoggetto.Text + "%' and Tag like'%" + txtTag.Text + "%' and Anno like'%"+ txtAnno.Text +"%'";
+            string cmd = "SELECT * FROM Catalogo Where Titolo like '%" + txtTitolo.Text + "%' and Soggetto like'%" + txtSoggetto.Text + "%' and Tag like'%" + txtTag.Text + "%' and Anno like'%" + txtAnno.Text + "%'";
 
             SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd, con);
 
@@ -55,27 +61,115 @@ namespace Ricerca
 
             con.Close();
             dgvRicerca.Columns["Id"].Visible = false;
-
         }
 
         private void dgvRicerca_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) { 
-            if (dgvRicerca.Rows[e.RowIndex].Cells["File"].Value.ToString() != null)
+            if (e.ColumnIndex == 0)
             {
-
-
-                string percorso = Preferenze.pathSalvataggio + dgvRicerca.Rows[e.RowIndex].Cells["File"].Value.ToString();
-                if (File.Exists(percorso))
+                if (e.RowIndex >= 0)
                 {
-                    Process.Start("explorer.exe", "/select, " + percorso);
+                    if (dgvRicerca.Rows[e.RowIndex].Cells["File"].Value.ToString() != null)
+                    {
+
+
+                        string percorso = Preferenze.pathSalvataggio + dgvRicerca.Rows[e.RowIndex].Cells["File"].Value.ToString();
+                        if (File.Exists(percorso))
+                        {
+                            Process.Start("explorer.exe", "/select, " + percorso);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("non c'è niente da aprire");
+                    }
                 }
             }
-            else
+            else if (e.ColumnIndex == 1)
             {
-                MessageBox.Show("non c'è niente da aprire");
+                //prendi l'id e mettilo nella classe statica
+                if (e.RowIndex >= 0)
+                {
+                    Preferenze.IdElemento = Convert.ToInt32(dgvRicerca.Rows[e.RowIndex].Cells["Id"].Value);
+                }
+
+                    //Apri il form
+                    Frm_Edit fe = new Frm_Edit();
+                fe.Show();
+               
+
             }
+            else if (e.ColumnIndex == 2)
+            //ELIMINA
+            {
+                DialogResult elimina1 = MessageBox.Show("Hai richiesto l'eliminazione dell'elemento: " + dgvRicerca.Rows[e.RowIndex].Cells["Titolo"].Value.ToString() + " soggetto: " + dgvRicerca.Rows[e.RowIndex].Cells["Soggetto"].Value.ToString(), "ATTENZIONE",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+
+                if (elimina1 == DialogResult.Yes)
+                {
+                    DialogResult elimina2 = MessageBox.Show("Hai confermato di procedere con l'eliminazione...PROCEDO CON L'ELIMINAZIONE TITOLO: " + dgvRicerca.Rows[e.RowIndex].Cells["Titolo"].Value.ToString() + " SOGGETTO: " + dgvRicerca.Rows[e.RowIndex].Cells["Soggetto"].Value.ToString(), "ELIMINO",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Exclamation);
+
+                    if (elimina2 == DialogResult.Yes)
+                    {
+                        //Esegui eliminazione
+                        if (e.RowIndex >= 0)
+                        {
+                            if (dgvRicerca.Rows[e.RowIndex].Cells["File"].Value.ToString() != null)
+                            {
+
+
+                                string percorso = Preferenze.pathSalvataggio + dgvRicerca.Rows[e.RowIndex].Cells["File"].Value.ToString();
+                                if (File.Exists(percorso))
+                                {
+                                    //Elimina il file
+                                    File.Delete(percorso);
+                                    //Elimina il record nella tabella
+                                    SQLiteConnection con = new SQLiteConnection("Data Source=" + Preferenze.pathDb + "\\ricerca_db.sqlite" + ";Version=3;", true); /* New=False;Compress=True;");*/
+                                    con.Open();
+                                    SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Catalogo WHERE Id=@Id", con);
+                                    cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(dgvRicerca.Rows[e.RowIndex].Cells["Id"].Value));
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                    catch (Exception err)
+                                    {
+                                        MessageBox.Show(err.Message);
+                                    }
+                                    con.Close();
+                                    dgvRicerca.Columns["Id"].Visible = false;
+                                    MessageBox.Show("ELIMINATO");
+                                    RicercaDB();
+                                    
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("non c'è niente da eliminare");
+                            }
+                        }
+
+
+
+                    }
+
+
+
+
+                }
+
+
+
+                
             }
+
+
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)

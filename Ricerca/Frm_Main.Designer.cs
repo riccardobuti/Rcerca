@@ -47,14 +47,16 @@
             this.txtAnno = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtMese = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dgvRicerca = new System.Windows.Forms.DataGridView();
-            this.Apri = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtMese = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.Apri = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Modifica = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Elimina = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRicerca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -257,6 +259,24 @@
             this.panel2.Size = new System.Drawing.Size(735, 337);
             this.panel2.TabIndex = 1;
             // 
+            // txtMese
+            // 
+            this.txtMese.Location = new System.Drawing.Point(226, 208);
+            this.txtMese.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMese.Name = "txtMese";
+            this.txtMese.Size = new System.Drawing.Size(86, 20);
+            this.txtMese.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(184, 207);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Mese";
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(521, 284);
@@ -293,7 +313,9 @@
             this.dgvRicerca.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvRicerca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRicerca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Apri});
+            this.Apri,
+            this.Modifica,
+            this.Elimina});
             this.dgvRicerca.Location = new System.Drawing.Point(8, 349);
             this.dgvRicerca.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRicerca.Name = "dgvRicerca";
@@ -302,12 +324,6 @@
             this.dgvRicerca.Size = new System.Drawing.Size(1010, 287);
             this.dgvRicerca.TabIndex = 2;
             this.dgvRicerca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRicerca_CellContentClick);
-            // 
-            // Apri
-            // 
-            this.Apri.HeaderText = "Apri";
-            this.Apri.Name = "Apri";
-            this.Apri.ReadOnly = true;
             // 
             // button1
             // 
@@ -331,23 +347,23 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // txtMese
+            // Apri
             // 
-            this.txtMese.Location = new System.Drawing.Point(226, 208);
-            this.txtMese.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMese.Name = "txtMese";
-            this.txtMese.Size = new System.Drawing.Size(86, 20);
-            this.txtMese.TabIndex = 10;
+            this.Apri.HeaderText = "Apri";
+            this.Apri.Name = "Apri";
+            this.Apri.ReadOnly = true;
             // 
-            // label10
+            // Modifica
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(184, 207);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Mese";
+            this.Modifica.HeaderText = "Modifica";
+            this.Modifica.Name = "Modifica";
+            this.Modifica.ReadOnly = true;
+            // 
+            // Elimina
+            // 
+            this.Elimina.HeaderText = "Elimina";
+            this.Elimina.Name = "Elimina";
+            this.Elimina.ReadOnly = true;
             // 
             // Frm_Main
             // 
@@ -393,11 +409,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dgvRicerca;
-        private System.Windows.Forms.DataGridViewButtonColumn Apri;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtMese;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewButtonColumn Apri;
+        private System.Windows.Forms.DataGridViewButtonColumn Modifica;
+        private System.Windows.Forms.DataGridViewButtonColumn Elimina;
     }
 }
 
