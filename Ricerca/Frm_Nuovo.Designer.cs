@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPathFile = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDataInserimento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
-            this.txtAnno = new System.Windows.Forms.TextBox();
             this.txtDurata = new System.Windows.Forms.TextBox();
             this.cbGenere = new System.Windows.Forms.ComboBox();
             this.txtAutore = new System.Windows.Forms.TextBox();
@@ -58,13 +59,14 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.txtPathFile);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtDataInserimento);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.txtNote);
-            this.panel2.Controls.Add(this.txtAnno);
             this.panel2.Controls.Add(this.txtDurata);
             this.panel2.Controls.Add(this.cbGenere);
             this.panel2.Controls.Add(this.txtAutore);
@@ -84,6 +86,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(693, 357);
             this.panel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(180, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "mm/aaaa";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(88, 206);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(86, 20);
+            this.dateTimePicker1.TabIndex = 20;
             // 
             // button1
             // 
@@ -142,14 +163,6 @@
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(374, 83);
             this.txtNote.TabIndex = 8;
-            // 
-            // txtAnno
-            // 
-            this.txtAnno.Location = new System.Drawing.Point(88, 208);
-            this.txtAnno.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAnno.Name = "txtAnno";
-            this.txtAnno.Size = new System.Drawing.Size(86, 20);
-            this.txtAnno.TabIndex = 7;
             // 
             // txtDurata
             // 
@@ -213,12 +226,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(47, 212);
+            this.label8.Location = new System.Drawing.Point(46, 212);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Anno";
+            this.label8.Text = "Data";
             // 
             // label7
             // 
@@ -344,7 +357,6 @@
         private System.Windows.Forms.TextBox txtDataInserimento;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.TextBox txtAnno;
         private System.Windows.Forms.TextBox txtDurata;
         private System.Windows.Forms.ComboBox cbGenere;
         private System.Windows.Forms.TextBox txtAutore;
@@ -361,5 +373,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnInserisci;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
     }
 }

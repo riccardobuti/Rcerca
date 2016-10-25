@@ -47,12 +47,14 @@
             this.txtAnno = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.dgvRicerca = new System.Windows.Forms.DataGridView();
             this.Apri = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtMese = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRicerca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -228,6 +230,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtMese);
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.txtNote);
@@ -252,6 +256,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 337);
             this.panel2.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(521, 284);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(170, 44);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Pulisci";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(521, 236);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 43);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "CERCA";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dgvRicerca
             // 
@@ -282,19 +309,6 @@
             this.Apri.Name = "Apri";
             this.Apri.ReadOnly = true;
             // 
-            // button3
-            // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(521, 236);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 43);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "CERCA";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(748, 130);
@@ -317,15 +331,23 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // button4
+            // txtMese
             // 
-            this.button4.Location = new System.Drawing.Point(521, 284);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(170, 44);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Pulisci";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.txtMese.Location = new System.Drawing.Point(226, 208);
+            this.txtMese.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMese.Name = "txtMese";
+            this.txtMese.Size = new System.Drawing.Size(86, 20);
+            this.txtMese.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(184, 207);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Mese";
             // 
             // Frm_Main
             // 
@@ -374,6 +396,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn Apri;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtMese;
+        private System.Windows.Forms.Label label10;
     }
 }
 

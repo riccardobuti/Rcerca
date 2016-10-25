@@ -81,6 +81,7 @@ namespace Ricerca
         private void button4_Click(object sender, EventArgs e)
         {
             txtAnno.Text = "";
+            txtMese.Text = "";
             txtAutore.Text = "";
             txtDurata.Text = "";
             txtNote.Text = "";
