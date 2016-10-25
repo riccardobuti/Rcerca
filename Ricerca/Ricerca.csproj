@@ -99,9 +99,11 @@
     </Compile>
     <Compile Include="Frm_Genere.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Frm_Genere.Designer.cs">
       <DependentUpon>Frm_Genere.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Frm_Main.cs">
       <SubType>Form</SubType>
@@ -121,7 +123,9 @@
     <Compile Include="Frm_Preferenze.Designer.cs">
       <DependentUpon>Frm_Preferenze.cs</DependentUpon>
     </Compile>
-    <Compile Include="Preferenze.cs" />
+    <Compile Include="Preferenze.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Video.cs" />
@@ -130,6 +134,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Genere.resx">
       <DependentUpon>Frm_Genere.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
