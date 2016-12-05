@@ -234,5 +234,10 @@ namespace Ricerca
             this.cbGenere.Items.Clear();
             CaricaGeneri();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
